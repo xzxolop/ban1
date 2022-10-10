@@ -1,19 +1,12 @@
-﻿begin
-  var (d,m) := readinteger2('Введите первый номер дня и месяца');
-  var (d1,m1) := readinteger2('Введите воторой номер дня и месяца');
-  assert((d < 32) and (d1 <32) and (m < 13) and (m1 <13));
-  
-  if (m = m1) and (d = d1) then
-    print('одинаково');
-  
-  if m>m1 then
-    print(d,m); 
-  if m>m1 then
-    print(d,m);
-  
-  if m=m1 then
-    if d>d1 then
-      print(d,m)
+﻿begin  
+  var(a,b) := readinteger2();
+  var c:= 0;
+  for var i:=a to b do 
+  begin
+    if ((i mod 4 = 0) and (i mod 100 <> 0)) or (i mod 400 = 0) then 
+      c:= c+366
   else
-    print(d1,m1)
+    c:=c+365;
+  end;
+  print(c);
 end.
